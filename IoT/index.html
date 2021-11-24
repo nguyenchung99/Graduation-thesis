@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-secondary">
+        <a>
+            <span class="bi bi-house-fill home-icon">HOME</span>
+        </a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="title">Sensors</div>
+                <div class="row">
+                    <div class="col-sm-6 box" style="background-color: rgb(231, 104, 104);">
+                        <div class="col-sm-12">Temperature</div>
+                        <div class="col-sm-12 value" id="temp">0</div>
+                    </div>
+                    <div class="col-sm-6 box" style="background-color: rgb(100, 117, 226);">
+                        <div class="col-sm-12">Humidity</div>
+                        <div class="col-sm-12 value" id="hum">0</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 box" style="background-color: rgb(104, 77, 77);">
+                        <div class="col-sm-12">Soil Moisture</div>
+                        <div class="col-sm-12 value" id="Soil">0</div>
+                    </div>
+                    <div class="col-sm-6 box" style="background-color: rgb(88, 199, 199);">
+                        <div class="col-sm-12">Rain Sensor</div>
+                        <div class="bi bi-cloud-sun wheather" id="sun"></div>
+                        <div class="bi bi-cloud-lightning-rain wheather" id="rain" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="title">Devices</div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="btn-led">
+                            <button class="bi bi-lightbulb" id="led_off" onclick="double_click_led()"></button>
+                            <button class="bi bi-lightbulb-fill" id="led_on" onclick="double_click_led()" style="display: none;"></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="btn-fan">
+                            <button class="bi bi-fan" id="fan_off" onclick="double_click_fan()"></button>
+                            <button class="bi bi-fan" id="fan_on" onclick="double_click_fan()" style="display: none;"></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="btn-pump">
+                            <button class="bi bi-water" id="pump_off" onclick="double_click_pump()"></button>
+                            <button class="bi bi-water" id="pump_on" onclick="double_click_pump()" style="display: none;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js "></script>
+</body>
+
+</html>
